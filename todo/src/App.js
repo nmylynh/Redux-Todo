@@ -8,7 +8,7 @@ class App extends Component {
     console.log(this.props.todos)
     return (
       <div>
-        <Todos todos={this.props.todos} />
+        <Todos />
       </div>
     )
   }

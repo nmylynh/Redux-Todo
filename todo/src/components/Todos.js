@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
 
 const Todos = (props) => {
     const {todos} = props;
@@ -12,11 +13,15 @@ const Todos = (props) => {
 
     return (
         <div className="todos-list">
-        
+
        <ul>{todosList}</ul>
             
         </div>
     )
 }
-
-export default Todos;
+const mapStateToProps = (state) => {
+    return {
+        todos: state.todos
+    }
+}
+export default connect(mapStateToProps)(Todos);
