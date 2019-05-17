@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import {connect} from 'react-redux';
+import React from 'react'
 
 const Todos = (props) => {
+    console.log(props);
     const {todos} = props;
     const todosList = todos.map(todo => { 
         return (
@@ -18,14 +18,4 @@ const Todos = (props) => {
     )
 }
 
-
-
-const mapStatetoProps = (state) => {
-    return {
-        id: state.id,
-        task: state.task, 
-        completed: state.completed
-    }
-} //you are telling the store what you want to get
-
-export default connect(mapStateToProps)(Todos); //connect to redux store
+export default Todos;

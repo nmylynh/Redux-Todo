@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import Todos from './components/Todos';
 import {connect} from 'react-redux';
 
-export class App extends Component {
+class App extends Component {
+
   render() {
+    console.log(this.props.todos)
     return (
       <div>
-        <Todos todos={this.state.todos} />
+        <Todos todos={this.props.todos} />
       </div>
     )
   }
 }
 
-mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
-    id: state.id,
-    task: state.task, 
-    completed: state.completed
+    todos: state.todos
   }
 }
 
