@@ -1,13 +1,30 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
-export class TodosList extends Component {
+
+class TodoList extends Component {
+
   render() {
     return (
-      <div>
-        placeholder
+        <div>
+        <h1>To Dos</h1>
+        <ul>
+          {this.props.todos.map(todo => {
+            return (
+              <div>
+                  {todo}
+              </div>
+            );
+          })}
+        </ul>
       </div>
     )
   }
 }
 
-export default TodosList
+const mapStateToProps = state => {
+    return { todos: state.todos}
+};
+
+export default connect(mapStateToProps, null)(TodoList);
