@@ -5,14 +5,15 @@ const Todos = (props) => {
     const todosList = todos.map(todo => { 
         return (
             <div className='todo' key={todo.id}>
-            {todo.task}   
+            <li>{todo.task} </li>  
             </div>
         )
     });
 
     return (
         <div className="todos-list">
-       {todosList}
+        
+       <ul>{todosList}</ul>
             
         </div>
     )
