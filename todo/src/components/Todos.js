@@ -21,7 +21,7 @@ const Todos = (props) => {
 }
 const mapStateToProps = (state) => {
     return {
-        todos: state.todos
+        todos: state
     }
 }
 export default connect(mapStateToProps)(Todos);
